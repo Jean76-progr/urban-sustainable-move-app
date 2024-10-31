@@ -24,7 +24,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister }) => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="votre@email.com"
                     />
                 </div>
@@ -39,7 +39,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister }) => {
                         required
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                        className="pl-10 pr-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="pl-10 pr-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="••••••••"
                     />
                     <button
@@ -58,7 +58,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister }) => {
 
             <button
                 type="submit"
-                className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors font-medium"
+                className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors"
             >
                 Se connecter
             </button>
@@ -88,23 +88,13 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [errors, setErrors] = useState({});
 
-    const validate = () => {
-        const newErrors = {};
-        if (formData.password !== formData.confirmPassword) {
-            newErrors.confirmPassword = 'Les mots de passe ne correspondent pas';
-        }
-        if (formData.password.length < 8) {
-            newErrors.password = 'Le mot de passe doit contenir au moins 8 caractères';
-        }
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (validate()) {
-            onSubmit(formData);
+        if (formData.password !== formData.confirmPassword) {
+            setErrors({ ...errors, confirmPassword: 'Les mots de passe ne correspondent pas' });
+            return;
         }
+        onSubmit(formData);
     };
 
     return (
@@ -118,7 +108,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="Jean Dupont"
                     />
                 </div>
@@ -133,7 +123,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="votre@email.com"
                     />
                 </div>
@@ -147,7 +137,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="+33 6 12 34 56 78"
                     />
                 </div>
@@ -162,9 +152,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         required
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                        className={`pl-10 pr-10 block w-full rounded-lg border shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 ${
-                            errors.password ? 'border-red-500' : 'border-gray-300'
-                        }`}
+                        className="pl-10 pr-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
                         placeholder="••••••••"
                     />
                     <button
@@ -179,13 +167,12 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         )}
                     </button>
                 </div>
-                {errors.password && (
-                    <p className="mt-1 text-sm text-red-600">{errors.password}</p>
-                )}
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Confirmer le mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Confirmer le mot de passe
+                </label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -193,7 +180,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         required
                         value={formData.confirmPassword}
                         onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                        className={`pl-10 pr-10 block w-full rounded-lg border shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 ${
+                        className={`pl-10 block w-full rounded-lg border shadow-sm p-3 ${
                             errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
                         }`}
                         placeholder="••••••••"
@@ -206,7 +193,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
 
             <button
                 type="submit"
-                className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors font-medium"
+                className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors"
             >
                 Créer un compte
             </button>

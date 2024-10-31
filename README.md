@@ -1,151 +1,70 @@
-# Urban Sustainable Move
+# Getting Started with Create React App
 
-Une application de mobilité durable développée pour la ville de Brno, permettant aux utilisateurs de visualiser et d'accéder à différentes options de transport écologique.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🌟 Fonctionnalités
+## Available Scripts
 
-- 🗺️ Carte interactive avec différents types de transport
-- 🚗 Covoiturage vert
-- 🚲 Groupes cyclistes
-- 🚌 Visualisation des arrêts de bus et tram
-- 📊 Statistiques en temps réel
-- 👤 Système de compte utilisateur
+In the project directory, you can run:
 
-## 🚀 Installation
+### `npm start`
 
-### Prérequis
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- Node.js (v14 ou supérieur)
-- npm ou yarn
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Installation des dépendances
+### `npm test`
 
-```bash
-# Cloner le dépôt
-git clone https://github.com/votre-username/urban-sustainable-move.git
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-# Accéder au dossier
-cd urban-sustainable-move
+### `npm run build`
 
-# Installer les dépendances
-npm install
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Packages requis
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```bash
-# Dépendances principales
-npm install react-leaflet leaflet     # Pour la carte
-npm install framer-motion             # Pour les animations
-npm install lucide-react              # Pour les icônes
-npm install react-router-dom          # Pour la navigation
-npm install tailwindcss               # Pour le styling
-npm install postcss autoprefixer      # Pour Tailwind CSS
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Configuration de Tailwind CSS
+### `npm run eject`
 
-```bash
-# Initialiser Tailwind CSS
-npx tailwindcss init -p
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## 🔧 Configuration
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. Créez un fichier `.env` à la racine du projet :
-```env
-REACT_APP_TITLE=Urban Sustainable Move
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-2. Assurez-vous que le fichier `tailwind.config.js` est correctement configuré :
-```javascript
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## 🏃‍♂️ Lancement
+## Learn More
 
-```bash
-# Démarrer l'application en mode développement
-npm start
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-# Construire l'application pour la production
-npm run build
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000)
+### Code Splitting
 
-## 📱 Compatibilité
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-L'application est entièrement responsive et compatible avec :
-- 💻 Ordinateurs de bureau
-- 📱 Smartphones
-- 📟 Tablettes
+### Analyzing the Bundle Size
 
-## 🛠️ Structure du projet
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-```
-src/
-├── components/
-│   ├── Account/
-│   │   ├── AccountButton.js
-│   │   ├── AuthModal.js
-│   │   └── Profile.js
-│   ├── Map/
-│   │   ├── MainMap.js
-│   │   ├── TransportFilters.js
-│   │   └── TransportStats.js
-│   └── SlidingMenu/
-│       └── SlidingMenu.js
-├── contexts/
-│   └── AuthContext.js
-├── App.js
-└── index.js
-```
+### Making a Progressive Web App
 
-## 🔐 Fonctionnalités d'authentification
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- Création de compte
-- Connexion
-- Profil utilisateur éditable
-- Statistiques personnelles
-- Stockage local des données
+### Advanced Configuration
 
-## 🎨 Personnalisation
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Pour modifier les styles :
-1. Les classes Tailwind peuvent être modifiées directement dans les composants
-2. Les couleurs principales peuvent être ajustées dans `tailwind.config.js`
-3. Les styles personnalisés peuvent être ajoutés dans `src/index.css`
+### Deployment
 
-## 🤝 Contribution
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-1. Fork le projet
-2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
-3. Committez vos changements (`git commit -m 'Add: Amazing Feature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
+### `npm run build` fails to minify
 
-## 📝 License
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
-## ✨ Remerciements
-
-- OpenStreetMap pour les données cartographiques
-- Leaflet pour la bibliothèque de cartographie
-- L'équipe de Tailwind CSS
-- La communauté React
-
-## 📧 Contact
-
-Votre Nom - [@votretwitter](https://twitter.com/votretwitter)
-
-Lien du projet: [https://github.com/votre-username/urban-sustainable-move](https://github.com/votre-username/urban-sustainable-move)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,37 +1,66 @@
-import React, { useState } from 'react';
-import { AuthProvider } from './contexts/AuthContext';
+import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import AuthModal from './components/Auth/AuthModal';
+import { LoginForm, RegisterForm } from './components/Auth/AuthForms';
 import MainMap from './components/Map/MainMap';
-import AuthModal from './components/Account/AuthModal';
-import Profile from './components/Account/Profile';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
-    const [authModal, setAuthModal] = useState({ isOpen: false, mode: 'login' });
-    const [profileOpen, setProfileOpen] = useState(false);
+    const [showSplash, setShowSplash] = useState(true);
+    const [authModal, setAuthModal] = useState({
+        isOpen: false,
+        mode: 'login'
+    });
 
-    const handleAuth = (formData) => {
-        console.log('Auth data:', formData);
-        setAuthModal({ isOpen: false, mode: 'login' });
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSplash(false);
+        }, 2500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleAuthSubmit = (formData) => {
+        console.log('Form submitted:', formData);
+        setAuthModal({ ...authModal, isOpen: false });
+    };
+
+    const handleOpenAuth = (mode) => {
+        setAuthModal({ isOpen: true, mode });
     };
 
     return (
-        <AuthProvider>
-            <div className="h-screen relative">
-                <MainMap />
+        <div className="w-screen h-screen overflow-hidden">
+            <AnimatePresence>
+                {showSplash && <SplashScreen />}
+            </AnimatePresence>
+
+            <div
+                className={`w-full h-full transition-opacity duration-500 ${
+                    showSplash ? 'opacity-0' : 'opacity-100'
+                }`}
+            >
+                <MainMap onOpenAuth={handleOpenAuth} />
 
                 <AuthModal
                     isOpen={authModal.isOpen}
-                    mode={authModal.mode}
-                    onClose={() => setAuthModal({ isOpen: false, mode: 'login' })}
-                    onSwitchMode={(mode) => setAuthModal({ ...authModal, mode })}
-                    onSubmit={handleAuth}
-                />
-
-                <Profile
-                    isOpen={profileOpen}
-                    onClose={() => setProfileOpen(false)}
-                />
+                    onClose={() => setAuthModal({ ...authModal, isOpen: false })}
+                    title={authModal.mode === 'login' ? 'Connexion' : 'Créer un compte'}
+                >
+                    {authModal.mode === 'login' ? (
+                        <LoginForm
+                            onSubmit={handleAuthSubmit}
+                            onSwitchToRegister={() => setAuthModal({ isOpen: true, mode: 'register' })}
+                        />
+                    ) : (
+                        <RegisterForm
+                            onSubmit={handleAuthSubmit}
+                            onSwitchToLogin={() => setAuthModal({ isOpen: true, mode: 'login' })}
+                        />
+                    )}
+                </AuthModal>
             </div>
-        </AuthProvider>
+        </div>
     );
 }
 
