@@ -3,11 +3,12 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      zIndex: {
-        '1000': '1000',
-        '999': '999',
+      colors: {
+        'primary': '#16a34a',
+        'primary-dark': '#15803d',
       },
     },
   },

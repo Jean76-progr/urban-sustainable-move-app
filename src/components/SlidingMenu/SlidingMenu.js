@@ -32,16 +32,16 @@ const SlidingMenu = ({ isOpen, setIsOpen }) => {
                     isOpen ? 'hidden' : ''
                 }`}
             >
-                <Menu className="h-6 w-6 text-green-600" />
+                <Menu className="h-6 w-6 text-green-600"/>
             </button>
 
             {/* Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.3 }}
-                        exit={{ opacity: 0 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 0.3}}
+                        exit={{opacity: 0}}
                         className="fixed inset-0 bg-black z-[999]"
                         onClick={() => setIsOpen(false)}
                     />
@@ -53,16 +53,18 @@ const SlidingMenu = ({ isOpen, setIsOpen }) => {
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
                 variants={menuVariants}
-                className="fixed left-0 top-0 h-full bg-gray-50 w-[90%] md:w-[450px] shadow-2xl z-[1000] overflow-y-auto"
+                className="fixed left-0 top-0 h-full bg-white dark:bg-gray-800 w-80 shadow-2xl z-[1000] overflow-y-auto"
             >
-                <div className="sticky top-0 bg-gray-50 p-4 border-b z-10">
-                    <div className="flex justify-between items-center">
-                        <h2 className="text-xl font-bold text-green-600">Urban Sustainable Move</h2>
+                <div className="p-4">
+                    <div className="flex justify-between items-center mb-8">
+                        <h2 className="text-xl font-bold text-primary dark:text-green-400">
+                            Urban Sustainable Move
+                        </h2>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
                         >
-                            <X className="h-6 w-6 text-gray-600" />
+                            <X className="h-6 w-6 text-gray-600 dark:text-gray-300"/>
                         </button>
                     </div>
                 </div>
@@ -70,7 +72,7 @@ const SlidingMenu = ({ isOpen, setIsOpen }) => {
                 {/* Section des services */}
                 <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-700 mb-4">Nos services</h3>
-                    <TransportCards />
+                    <TransportCards/>
                 </div>
 
                 {/* Statistiques ou informations supplémentaires */}

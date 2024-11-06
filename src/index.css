@@ -66,3 +66,47 @@ html, body {
 button {
   touch-action: manipulation;
 }
+
+/* Styles existants ... */
+
+/* Fix pour iOS */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fix pour la hauteur mobile */
+.h-screen {
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Fix pour les contrôles de la carte sur mobile */
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+/* Améliorer la taille des zones de toucher */
+.leaflet-touch .leaflet-bar a {
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+/* Optimiser les performances */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
