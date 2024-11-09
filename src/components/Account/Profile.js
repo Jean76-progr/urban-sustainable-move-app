@@ -40,7 +40,7 @@ const Profile = ({ isOpen, onClose }) => {
             >
                 {/* Header */}
                 <div className="flex justify-between items-center p-6 border-b">
-                    <h2 className="text-2xl font-bold text-gray-900">Profil Utilisateur</h2>
+                    <h2 className="text-2xl font-bold text-gray-900">User Profil</h2>
                     <button
                         onClick={onClose}
                         className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -94,7 +94,7 @@ const Profile = ({ isOpen, onClose }) => {
                     <div className="space-y-4">
                         <div className="grid md:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Nom</label>
+                                <label className="block text-sm font-medium text-gray-700">Name</label>
                                 <div className="mt-1 relative">
                                     <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                                     <input
@@ -108,7 +108,7 @@ const Profile = ({ isOpen, onClose }) => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Email</label>
+                                <label className="block text-sm font-medium text-gray-700">Mail</label>
                                 <div className="mt-1 relative">
                                     <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                                     <input
@@ -122,7 +122,7 @@ const Profile = ({ isOpen, onClose }) => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Téléphone</label>
+                                <label className="block text-sm font-medium text-gray-700">Phone</label>
                                 <div className="mt-1 relative">
                                     <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                                     <input
@@ -138,28 +138,28 @@ const Profile = ({ isOpen, onClose }) => {
 
                         {/* Statistiques */}
                         <div className="mt-6">
-                            <h3 className="text-lg font-medium text-gray-900 mb-4">Vos statistiques</h3>
+                            <h3 className="text-lg font-medium text-gray-900 mb-4">Your statistics</h3>
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="bg-green-50 p-4 rounded-lg">
                                     <div className="flex items-center space-x-2">
                                         <Car className="h-5 w-5 text-green-600" />
                                         <span className="text-lg font-bold text-green-600">{stats.carpools}</span>
                                     </div>
-                                    <p className="text-sm text-green-700">Covoiturages</p>
+                                    <p className="text-sm text-green-700">Carpooling</p>
                                 </div>
                                 <div className="bg-blue-50 p-4 rounded-lg">
                                     <div className="flex items-center space-x-2">
                                         <Bike className="h-5 w-5 text-blue-600" />
                                         <span className="text-lg font-bold text-blue-600">{stats.bikeRides}</span>
                                     </div>
-                                    <p className="text-sm text-blue-700">Trajets vélo</p>
+                                    <p className="text-sm text-blue-700">Bike Rides</p>
                                 </div>
                                 <div className="bg-yellow-50 p-4 rounded-lg">
                                     <div className="flex items-center space-x-2">
                                         <Calendar className="h-5 w-5 text-yellow-600" />
                                         <span className="text-lg font-bold text-yellow-600">{stats.co2Saved}kg</span>
                                     </div>
-                                    <p className="text-sm text-yellow-700">CO2 économisé</p>
+                                    <p className="text-sm text-yellow-700">CO2 saved</p>
                                 </div>
                             </div>
                         </div>

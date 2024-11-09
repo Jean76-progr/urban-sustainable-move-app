@@ -24,7 +24,7 @@ const SplashScreen = () => {
                     animate={{ y: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                    Urban
+                    Urban Sustainable Move
                 </motion.h1>
                 <motion.h1
                     className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4"
@@ -32,7 +32,7 @@ const SplashScreen = () => {
                     animate={{ y: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                    Sustainable Move
+                    by Jean JANEL
                 </motion.h1>
                 <motion.div
                     initial={{ scaleX: 0 }}

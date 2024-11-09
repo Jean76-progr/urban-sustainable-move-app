@@ -26,7 +26,7 @@ const TransportStats = () => {
                 >
                     <div className="flex items-center space-x-2">
                         <TrendingUp className="h-4 w-4 text-green-600" />
-                        <span className="text-sm font-medium text-gray-900">Statistiques</span>
+                        <span className="text-sm font-medium text-gray-900">Statistics</span>
                     </div>
                     {isExpanded ? (
                         <ChevronDown className="h-4 w-4 text-gray-500" />
@@ -41,11 +41,11 @@ const TransportStats = () => {
                         <div className="grid grid-cols-2 gap-2">
                             <div className="text-center p-1.5 bg-green-50 rounded">
                                 <p className="text-lg font-bold text-green-600">{stats.carpools}</p>
-                                <p className="text-xs text-green-800">Covoiturages</p>
+                                <p className="text-xs text-green-800">Carpools</p>
                             </div>
                             <div className="text-center p-1.5 bg-blue-50 rounded">
                                 <p className="text-lg font-bold text-blue-600">{stats.bikeGroups}</p>
-                                <p className="text-xs text-blue-800">Groupes vélo</p>
+                                <p className="text-xs text-blue-800">Bike Groups</p>
                             </div>
                         </div>
                     </div>
@@ -64,23 +64,23 @@ const TransportStats = () => {
                                 <div className="grid grid-cols-2 gap-2">
                                     <div className="text-center p-1.5 bg-green-50 rounded">
                                         <p className="text-lg font-bold text-green-600">{stats.carpools}</p>
-                                        <p className="text-xs text-green-800">Covoiturages</p>
+                                        <p className="text-xs text-green-800">Carpools</p>
                                     </div>
                                     <div className="text-center p-1.5 bg-blue-50 rounded">
                                         <p className="text-lg font-bold text-blue-600">{stats.bikeGroups}</p>
-                                        <p className="text-xs text-blue-800">Groupes vélo</p>
+                                        <p className="text-xs text-blue-800">Bike Groups</p>
                                     </div>
                                     <div className="text-center p-1.5 bg-yellow-50 rounded">
                                         <p className="text-lg font-bold text-yellow-600">{stats.busOnTime}%</p>
-                                        <p className="text-xs text-yellow-800">Bus à l'heure</p>
+                                        <p className="text-xs text-yellow-800">Bus On Time</p>
                                     </div>
                                     <div className="text-center p-1.5 bg-purple-50 rounded">
                                         <p className="text-lg font-bold text-purple-600">{stats.tramOnTime}%</p>
-                                        <p className="text-xs text-purple-800">Trams à l'heure</p>
+                                        <p className="text-xs text-purple-800">Tram On Time</p>
                                     </div>
                                 </div>
                                 <div className="text-[10px] text-center text-gray-500 mt-1">
-                                    Mis à jour il y a quelques minutes
+                                    Update a minute ago
                                 </div>
                             </div>
                         </motion.div>

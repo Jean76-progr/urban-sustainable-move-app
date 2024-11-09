@@ -45,7 +45,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister, loading }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -77,18 +77,18 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister, loading }) => {
                 disabled={loading}
                 className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors font-medium disabled:bg-green-400 disabled:cursor-not-allowed"
             >
-                {loading ? 'Connexion en cours...' : 'Se connecter'}
+                {loading ? 'Connection in progress...' : 'Log in'}
             </button>
 
             <p className="text-center text-sm text-gray-600">
-                Pas encore de compte ?{' '}
+                No account yet? ?{' '}
                 <button
                     type="button"
                     onClick={onSwitchToRegister}
                     disabled={loading}
                     className="text-green-600 hover:text-green-700 font-medium disabled:text-green-400 disabled:cursor-not-allowed"
                 >
-                    S'inscrire
+                    Register
                 </button>
             </p>
         </form>
@@ -129,7 +129,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
             try {
                 await onSubmit(formData);
             } catch (err) {
-                setApiError(err.message || 'Une erreur est survenue lors de l\'inscription');
+                setApiError(err.message || 'An error occurred during registration');
             }
         }
     };
@@ -257,14 +257,14 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
             </button>
 
             <p className="text-center text-sm text-gray-600">
-                Déjà un compte ?{' '}
+                Already have an account ?{' '}
                 <button
                     type="button"
                     onClick={onSwitchToLogin}
                     disabled={loading}
                     className="text-green-600 hover:text-green-700 font-medium disabled:text-green-400 disabled:cursor-not-allowed"
                 >
-                    Se connecter
+                    Log in
                 </button>
             </p>
         </form>

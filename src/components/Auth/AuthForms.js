@@ -31,7 +31,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -60,11 +60,11 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister }) => {
                 type="submit"
                 className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors"
             >
-                Se connecter
+                Login
             </button>
 
             <p className="text-center text-sm text-gray-600">
-                Pas encore de compte ?{' '}
+                Still not have an account ?{' '}
                 <button
                     type="button"
                     onClick={onSwitchToRegister}
@@ -91,7 +91,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.password !== formData.confirmPassword) {
-            setErrors({ ...errors, confirmPassword: 'Les mots de passe ne correspondent pas' });
+            setErrors({ ...errors, confirmPassword: 'Password doesn\'t correspond' });
             return;
         }
         onSubmit(formData);
@@ -100,7 +100,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Complete name</label>
                 <div className="relative">
                     <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -115,7 +115,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Mail</label>
                 <div className="relative">
                     <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -124,13 +124,13 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3"
-                        placeholder="votre@email.com"
+                        placeholder="your@email.com"
                     />
                 </div>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                 <div className="relative">
                     <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -144,7 +144,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -171,7 +171,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
 
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Confirmer le mot de passe
+                    Confirm password
                 </label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
@@ -195,17 +195,17 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin }) => {
                 type="submit"
                 className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors"
             >
-                Créer un compte
+                Create an account
             </button>
 
             <p className="text-center text-sm text-gray-600">
-                Déjà un compte ?{' '}
+                Already have an account ?{' '}
                 <button
                     type="button"
                     onClick={onSwitchToLogin}
                     className="text-green-600 hover:text-green-700 font-medium"
                 >
-                    Se connecter
+                    Login in
                 </button>
             </p>
         </form>

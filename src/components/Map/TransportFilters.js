@@ -6,8 +6,8 @@ const TransportFilters = ({ filters, onToggleFilter, isDarkMode, isCollapsed, se
     const transportTypes = [
         { id: 'bus', icon: Bus, label: 'Bus' },
         { id: 'tram', icon: Train, label: 'Tram' },
-        { id: 'bike', icon: Bike, label: 'Vélo' },
-        { id: 'carpool', icon: Car, label: 'Covoiturage' },
+        { id: 'bike', icon: Bike, label: 'Bike' },
+        { id: 'carpool', icon: Car, label: 'Carpool' },
     ];
 
     const handleCollapse = () => {
@@ -24,7 +24,7 @@ const TransportFilters = ({ filters, onToggleFilter, isDarkMode, isCollapsed, se
                     onClick={handleCollapse}
                     className="w-full flex items-center justify-between p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                    <span className="font-medium text-gray-900 dark:text-white">Filtres</span>
+                    <span className="font-medium text-gray-900 dark:text-white">Filters</span>
                     {isCollapsed ? (
                         <ChevronDown className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                     ) : (

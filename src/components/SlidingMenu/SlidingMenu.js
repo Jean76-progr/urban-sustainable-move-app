@@ -71,21 +71,21 @@ const SlidingMenu = ({ isOpen, setIsOpen }) => {
 
                 {/* Section des services */}
                 <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Nos services</h3>
+                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Our services</h3>
                     <TransportCards/>
                 </div>
 
                 {/* Statistiques ou informations supplémentaires */}
                 <div className="p-4 bg-green-50 mt-4">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Statistiques</h3>
+                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Statistics</h3>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white p-4 rounded-lg text-center">
                             <p className="text-2xl font-bold text-green-600">245</p>
-                            <p className="text-sm text-gray-600">Covoiturages</p>
+                            <p className="text-sm text-gray-600">Carpools</p>
                         </div>
                         <div className="bg-white p-4 rounded-lg text-center">
                             <p className="text-2xl font-bold text-green-600">12</p>
-                            <p className="text-sm text-gray-600">Groupes actifs</p>
+                            <p className="text-sm text-gray-600">Active Groups</p>
                         </div>
                     </div>
                 </div>

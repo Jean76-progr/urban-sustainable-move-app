@@ -25,14 +25,14 @@ const AccountButton = ({ onOpenModal }) => {
                         className="w-full px-4 py-2 text-left hover:bg-gray-100"
                     >
                         <LogIn className="h-4 w-4 inline mr-2" />
-                        Connexion
+                        Login in
                     </button>
                     <button
                         onClick={() => handleAction('register')}
                         className="w-full px-4 py-2 text-left hover:bg-gray-100"
                     >
                         <UserPlus className="h-4 w-4 inline mr-2" />
-                        Créer un compte
+                        Create an account
                     </button>
                 </div>
             )}

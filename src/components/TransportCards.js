@@ -10,25 +10,25 @@ const TransportCards = () => {
         {
             id: 'carpool',
             icon: Car,
-            title: "Covoiturage Vert",
-            description: "Trouvez ou proposez un trajet écologique",
-            action: "Proposer un trajet",
+            title: "Green Carpool",
+            description: "Find our propose a carpool",
+            action: "Propose a ride",
             form: <CarpoolForm />
         },
         {
             id: 'cycling',
             icon: Bike,
-            title: "Groupe Cycliste",
-            description: "Rejoignez d'autres cyclistes",
-            action: "Créer un groupe",
+            title: "Bike Groups",
+            description: "Join other bike riders",
+            action: "Create a group",
             form: <CyclingGroupForm />
         },
         {
             id: 'carfree',
             icon: Calendar,
-            title: "Jour Sans Voiture",
-            description: "Participez à notre initiative",
-            action: "Je participe",
+            title: "Car Free",
+            description: "Participate to this initiative",
+            action: "I join",
             form: <CarFreeForm />
         }
     ];
