@@ -39,7 +39,7 @@ export const LoginForm = ({ onSubmit, onSwitchToRegister, loading }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
-                        placeholder="votre@email.com"
+                        placeholder="your@mail.com"
                     />
                 </div>
             </div>
@@ -110,13 +110,13 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
     const validate = () => {
         const newErrors = {};
         if (formData.password !== formData.confirmPassword) {
-            newErrors.confirmPassword = 'Les mots de passe ne correspondent pas';
+            newErrors.confirmPassword = 'Password doesn\ t correspond';
         }
         if (formData.password.length < 8) {
-            newErrors.password = 'Le mot de passe doit contenir au moins 8 caractères';
+            newErrors.password = 'Password must have 8 or more characters;
         }
         if (formData.phone && !/^\+?[0-9\s-]{10,}$/.test(formData.phone)) {
-            newErrors.phone = 'Numéro de téléphone invalide';
+            newErrors.phone = 'Phone number invalid';
         }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -159,7 +159,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Mail</label>
                 <div className="relative">
                     <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -169,13 +169,13 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="pl-10 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
-                        placeholder="votre@email.com"
+                        placeholder="your@mail.com"
                     />
                 </div>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                 <div className="relative">
                     <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -195,7 +195,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -228,7 +228,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Confirmer le mot de passe</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
                 <div className="relative">
                     <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <input
@@ -253,7 +253,7 @@ export const RegisterForm = ({ onSubmit, onSwitchToLogin, loading }) => {
                 disabled={loading}
                 className="w-full bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors font-medium disabled:bg-green-400 disabled:cursor-not-allowed"
             >
-                {loading ? 'Création du compte...' : 'Créer un compte'}
+                {loading ? 'Account creation...' : 'Create an account'}
             </button>
 
             <p className="text-center text-sm text-gray-600">
