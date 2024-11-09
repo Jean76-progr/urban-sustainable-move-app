@@ -1,18 +1,22 @@
+/* Main App container styles */
 .App {
   text-align: center;
 }
 
+/* Logo styles - sets size and prevents pointer interactions */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Animation for the logo - only applies if user hasn't set reduce motion preference */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header section styling - creates a full-height centered flex container */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +28,12 @@
   color: white;
 }
 
+/* Link styling - uses React's default blue color */
 .App-link {
   color: #61dafb;
 }
 
+/* Rotation animation definition for the logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
