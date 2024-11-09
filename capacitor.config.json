@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.Urban-Sustainable-Move",
-  "appName": "nameofyourapp",
+  "appName": "Urban Sustainable Move",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
