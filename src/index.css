@@ -1,8 +1,9 @@
+/* Import Tailwind CSS base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Styles de base */
+/* Base styles - Set full viewport dimensions and remove tap highlight */
 html, body {
   width: 100%;
   height: 100%;
@@ -10,28 +11,28 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Adaptatif pour mobile */
+/* Mobile-specific adjustments */
 @media (max-width: 640px) {
-  /* Ajustements des contrôles de la carte */
+  /* Adjust map controls positioning for better mobile UX */
   .leaflet-control-zoom {
     margin-bottom: 70px !important;
   }
-
-  /* Plus grand zone de clic pour les boutons */
+  
+  /* Increase touch target size for zoom controls */
   .leaflet-control-zoom a {
     width: 40px !important;
     height: 40px !important;
     line-height: 40px !important;
   }
-
-  /* Ajustements des popups */
+  
+  /* Adjust popup text size and spacing for mobile */
   .leaflet-popup-content {
     margin: 10px 12px;
     font-size: 14px;
   }
 }
 
-/* Meilleures interactions tactiles */
+/* Touch device interactions - Add visual feedback */
 @media (hover: none) {
   .leaflet-control-zoom a:active,
   button:active {
@@ -39,7 +40,7 @@ html, body {
   }
 }
 
-/* Empêcher le débordement sur iOS */
+/* Leaflet map container styles - Ensure proper positioning and touch scrolling */
 .leaflet-container {
   width: 100%;
   height: 100%;
@@ -51,7 +52,7 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Améliorer la visibilité des popups sur mobile */
+/* Enhanced popup styles for better readability */
 .leaflet-popup-content-wrapper {
   padding: 2px;
   border-radius: 8px;
@@ -62,14 +63,12 @@ html, body {
   line-height: 1.4;
 }
 
-/* Meilleures interactions tactiles pour tous les boutons */
+/* Improve touch interactions for buttons */
 button {
   touch-action: manipulation;
 }
 
-/* Styles existants ... */
-
-/* Fix pour iOS */
+/* iOS-specific fixes for proper viewport handling */
 html, body {
   height: 100%;
   width: 100%;
@@ -79,34 +78,36 @@ html, body {
   position: fixed;
 }
 
+/* Root element containment */
 #root {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-/* Fix pour la hauteur mobile */
+/* Mobile viewport height fix - Uses CSS custom property for dynamic height */
 .h-screen {
   height: 100vh; /* Fallback */
   height: calc(var(--vh, 1vh) * 100);
 }
 
-/* Fix pour les contrôles de la carte sur mobile */
+/* Enhanced map controls styling for touch devices */
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
   border: none;
   box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 
-/* Améliorer la taille des zones de toucher */
+/* Increase touch target sizes for map controls */
 .leaflet-touch .leaflet-bar a {
   width: 40px !important;
   height: 40px !important;
   line-height: 40px !important;
 }
 
-/* Optimiser les performances */
+/* Performance optimizations - Disable default mobile behaviors */
 * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+```
