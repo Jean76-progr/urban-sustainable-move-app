@@ -5,7 +5,7 @@ import { LoginForm, RegisterForm } from './components/Auth/AuthForms';
 import MainMap from './components/Map/MainMap';
 import SplashScreen from './components/SplashScreen';
 
-// Composant Alert simplifié
+// Simple Alert component with success/error styling variants
 const Alert = ({ children, type = 'success' }) => (
     <div className={`p-4 rounded-lg ${
         type === 'error'
@@ -17,6 +17,7 @@ const Alert = ({ children, type = 'success' }) => (
 );
 
 function App() {
+    // State management for app-wide features
     const [showSplash, setShowSplash] = useState(true);
     const [authModal, setAuthModal] = useState({
         isOpen: false,
@@ -26,11 +27,12 @@ function App() {
     const [user, setUser] = useState(null);
     const [notification, setNotification] = useState(null);
 
-    // Simuler une base d'utilisateurs
+    // Mock user database for development
     const mockUsers = [
         { email: 'test@example.com', password: 'password123', name: 'Test User' }
     ];
 
+    // Splash screen timer effect
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowSplash(false);
@@ -39,19 +41,22 @@ function App() {
         return () => clearTimeout(timer);
     }, []);
 
+    // Utility function to show temporary notifications
     const showNotification = (message, type = 'success') => {
         setNotification({ message, type });
         setTimeout(() => setNotification(null), 3000);
     };
 
+    // Handle authentication form submissions (login/register)
     const handleAuthSubmit = async (formData) => {
         setLoading(true);
 
-        // Simuler un délai réseau
+        // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         try {
             if (authModal.mode === 'login') {
+                // Handle login logic
                 const user = mockUsers.find(u => u.email === formData.email);
                 if (user && user.password === formData.password) {
                     setUser(user);
@@ -63,6 +68,7 @@ function App() {
                     throw new Error('Email ou mot de passe incorrect');
                 }
             } else {
+                // Handle registration logic
                 if (mockUsers.find(u => u.email === formData.email)) {
                     throw new Error('Cet email est déjà utilisé');
                 }
@@ -85,6 +91,7 @@ function App() {
         }
     };
 
+    // Handle user logout
     const handleLogout = () => {
         setUser(null);
         localStorage.removeItem('token');
@@ -92,12 +99,14 @@ function App() {
         showNotification('Déconnexion réussie');
     };
 
+    // Open authentication modal with specified mode
     const handleOpenAuth = (mode) => {
         setAuthModal({ isOpen: true, mode });
     };
 
     return (
         <div className="w-screen h-screen overflow-hidden relative">
+            {/* Notification display */}
             {notification && (
                 <div className="absolute top-4 right-4 z-50 w-72">
                     <Alert type={notification.type}>
@@ -106,10 +115,12 @@ function App() {
                 </div>
             )}
 
+            {/* Splash screen with animation */}
             <AnimatePresence>
                 {showSplash && <SplashScreen />}
             </AnimatePresence>
 
+            {/* Main application content */}
             <div
                 className={`w-full h-full transition-opacity duration-500 ${
                     showSplash ? 'opacity-0' : 'opacity-100'
@@ -121,6 +132,7 @@ function App() {
                     onLogout={handleLogout}
                 />
 
+                {/* Authentication modal */}
                 <AuthModal
                     isOpen={authModal.isOpen}
                     onClose={() => setAuthModal({ ...authModal, isOpen: false })}
@@ -145,6 +157,7 @@ function App() {
                     )}
                 </AuthModal>
 
+                {/* Debug button for development environment */}
                 {process.env.NODE_ENV === 'development' && (
                     <div className="fixed bottom-4 right-4 z-50">
                         <button
